@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Validation rules (livr)
+    url: https://github.com/koorchik/rust-livr/issues
+    about: A rule that validates wrongly, outside of axum
+  - name: LIVR specification
+    url: https://livr-spec.org
+    about: The rules and their semantics, shared by all implementations

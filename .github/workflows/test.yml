@@ -1,0 +1,48 @@
+name: Test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The lowest supported Rust (rust-version in Cargo.toml) and the latest one
+        rust: ['1.88', stable]
+    defaults:
+      run:
+        working-directory: rust-livr-axum
+    steps:
+      # livr is a path dependency: rust-livr goes next to this repository
+      - uses: actions/checkout@v7
+        with:
+          path: rust-livr-axum
+      - uses: actions/checkout@v7
+        with:
+          repository: koorchik/rust-livr
+          path: rust-livr
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.rust }}
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: rust-livr-axum
+      - run: cargo test
+      - run: cargo build --examples
+      # Lints, formatting and documentation change with Rust versions: only the latest one
+      - if: matrix.rust == 'stable'
+        run: cargo clippy --all-targets -- -D warnings
+      - if: matrix.rust == 'stable'
+        run: cargo fmt --check
+      - if: matrix.rust == 'stable'
+        run: cargo doc --no-deps
+        env:
+          RUSTDOCFLAGS: -D warnings

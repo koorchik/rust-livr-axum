@@ -1,0 +1,33 @@
+name: Bug report
+description: A request is rejected or accepted wrongly, a response is wrong, or something crashes
+labels: [bug]
+body:
+  - type: textarea
+    id: code
+    attributes:
+      label: Schema and route
+      description: The `schema!` invocation or the LIVR rules, and the route with its extractor
+      render: rust
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Request
+      description: Method, `Content-Type`, and the body or query string
+      render: http
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: livr-axum 0.1.0, livr 0.1.0, axum 0.8.9, rustc 1.88.0
+    validations:
+      required: true
