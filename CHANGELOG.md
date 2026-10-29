@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-10-29)
 
 Validation with livr 0.1, a LIVR 2.0 implementation (https://livr-spec.org).
 
