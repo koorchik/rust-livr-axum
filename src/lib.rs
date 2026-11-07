@@ -1,6 +1,7 @@
 //! [axum](https://docs.rs/axum) extractors for [LIVR](https://livr-spec.org)
 //! validation, with [livr](https://docs.rs/livr), an implementation of LIVR
-//! 2.0 with the rules of the LIVR 2.5 draft.
+//! 2.0 and LIVR 2.5 (the
+//! [LIVR 2.5 specification](https://github.com/koorchik/LIVR/blob/master/drafts/v2.5.md)).
 //!
 //! - [`Livr<T>`]: a JSON body validated by a typed schema (`livr::schema!`).
 //! - [`LivrQuery<T>`], [`LivrForm<T>`]: a query string, a form. Their values

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2026-11-07)
+
+- Docs: LIVR 2.5 is released, not a draft.
+
 ## 0.2.0 (2026-11-07)
 
 Validation with livr 0.2, which adds the rules of the LIVR 2.5 draft

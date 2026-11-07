@@ -1,10 +1,10 @@
 [package]
 name = "livr-axum"
-description = "axum extractors for LIVR 2.0 validation with livr, the LIVR 2.5 draft rules too: all errors at once as JSON, typed schemas, query strings, forms, schemas loaded at run time"
+description = "axum extractors for LIVR 2.0 and LIVR 2.5 validation with livr: all errors at once as JSON, typed schemas, query strings, forms, schemas loaded at run time"
 keywords = ["axum", "validation", "livr", "extractor", "validator"]
 categories = ["web-programming::http-server"]
 readme = "README.md"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT"

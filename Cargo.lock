@@ -241,7 +241,7 @@ checksum = "65cd87c9a6d60536580b316ad985726104730a5151c99845f2490428ef91240a"
 
 [[package]]
 name = "livr"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "livr-core",
  "livr-macros",
@@ -251,7 +251,7 @@ dependencies = [
 
 [[package]]
 name = "livr-axum"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "axum",
  "form_urlencoded",
@@ -266,7 +266,7 @@ dependencies = [
 
 [[package]]
 name = "livr-core"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "regex",
  "serde",
@@ -275,7 +275,7 @@ dependencies = [
 
 [[package]]
 name = "livr-macros"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "livr-core",
  "proc-macro2",
