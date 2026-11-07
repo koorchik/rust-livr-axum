@@ -4,7 +4,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 ## Project Overview
 
-`livr-axum`: axum extractors for LIVR 2.0 validation. It depends on `livr` by path, from [rust-livr](https://github.com/koorchik/rust-livr) checked out next to this repository (`../rust-livr`); `cargo publish` uses the version instead.
+`livr-axum`: axum extractors for LIVR validation (2.0 and the 2.5 draft rules, from livr). It depends on `livr` by path, from [rust-livr](https://github.com/koorchik/rust-livr) checked out next to this repository (`../rust-livr`); `cargo publish` uses the version instead.
 
 ## Commands
 

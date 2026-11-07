@@ -14,4 +14,5 @@ A vulnerability of the validation itself belongs to [livr](https://github.com/ko
 
 | Version | Supported |
 |---|---|
-| 0.1.x | ✅ |
+| 0.2.x | ✅ |
+| 0.1.x | ❌ |

@@ -44,6 +44,15 @@ livr::schema! {
     }
 }
 
+// Rules of the LIVR 2.5 draft, from livr
+livr::schema! {
+    #[derive(Debug)]
+    pub struct Filter {
+        active: ["required", "boolean"],
+        ids: [{"list_of": "uuid"}, "unique"],
+    }
+}
+
 // The error format of an API, for the middleware
 struct ApiError(LivrRejection);
 
@@ -95,6 +104,13 @@ fn app() -> Router {
             }),
         )
         .route("/forms", get(form_handler).post(form_handler))
+        .route(
+            "/filters",
+            get(|LivrQuery(filter): LivrQuery<Filter>| async move {
+                let active: bool = filter.active;
+                axum::Json(json!({"active": active, "ids": filter.ids}))
+            }),
+        )
         .route(
             "/passwords",
             post(|LivrForm(form): LivrForm<Password>| async move { form.password }),
@@ -383,6 +399,25 @@ async fn converts_query_strings() {
         (
             StatusCode::UNPROCESSABLE_ENTITY,
             json!({"code": "VALIDATION_ERROR", "fields": {"q": "REQUIRED", "page": "NOT_POSITIVE_INTEGER"}}),
+        ),
+    );
+}
+
+#[tokio::test]
+async fn validates_with_the_rules_of_livr_2_5() {
+    let id = "123e4567-e89b-12d3-a456-426614174000";
+    assert_eq!(
+        send(get_request(&format!("/filters?active=true&ids={id}"))).await,
+        (StatusCode::OK, json!({"active": true, "ids": [id]})),
+    );
+    assert_eq!(
+        send(get_request(&format!(
+            "/filters?active=yes&ids={id}&ids={id}"
+        )))
+        .await,
+        (
+            StatusCode::UNPROCESSABLE_ENTITY,
+            json!({"code": "VALIDATION_ERROR", "fields": {"active": "NOT_BOOLEAN", "ids": "NOT_UNIQUE_ITEMS"}}),
         ),
     );
 }

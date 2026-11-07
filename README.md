@@ -7,7 +7,7 @@
 [![MSRV 1.88](https://img.shields.io/badge/MSRV-1.88-orange)](https://blog.rust-lang.org/2025/06/26/Rust-1.88.0/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/koorchik/rust-livr-axum/blob/master/LICENSE)
 
-**Validation errors your frontend can show: every field, at once, as JSON.** [axum](https://github.com/tokio-rs/axum) extractors that validate with [livr](https://github.com/koorchik/rust-livr), an implementation of the [LIVR 2.0 specification](https://livr-spec.org) (Language Independent Validation Rules) that passes its full test suite. The same rules and error codes work in the LIVR implementations of other languages, the JavaScript of your frontend too.
+**Validation errors your frontend can show: every field, at once, as JSON.** [axum](https://github.com/tokio-rs/axum) extractors that validate with [livr](https://github.com/koorchik/rust-livr), an implementation of the [LIVR 2.0 specification](https://livr-spec.org) (Language Independent Validation Rules) that passes its full test suite and has the rules of the [LIVR 2.5 draft](https://github.com/koorchik/LIVR/blob/master/drafts/v2.5.md) too. The same rules and error codes work in the LIVR implementations of other languages, the JavaScript of your frontend too.
 
 ```rust
 use axum::{Router, routing::post};
@@ -60,8 +60,8 @@ The same request, `{"name": "", "email": "wrong", "age": "abc"}`, then `"age": 1
 ```toml
 [dependencies]
 axum = "0.8"
-livr = "0.1"
-livr-axum = "0.1"
+livr = "0.2"
+livr-axum = "0.2"
 ```
 
 ## A JSON body: `Livr<T>`

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 (2026-11-07)
+
+Validation with livr 0.2, which adds the rules of the LIVR 2.5 draft
+(`boolean`, `required_if`, `when`, `values`, `keys`, `uuid`, `iban` and
+more, see its
+[CHANGELOG](https://github.com/koorchik/rust-livr/blob/master/CHANGELOG.md)).
+The extractors and the middleware take them as any other rule.
+
+- Requires livr 0.2: `livr::Schema` of livr 0.1 does not work with this
+  version, and livr-axum 0.1 does not work with livr 0.2. Upgrade both.
+- No changes to the API of livr-axum.
+
 ## 0.1.0 (2026-10-29)
 
 Validation with livr 0.1, a LIVR 2.0 implementation (https://livr-spec.org).

@@ -1,10 +1,10 @@
 [package]
 name = "livr-axum"
-description = "axum extractors for LIVR 2.0 validation with livr: all errors at once as JSON, typed schemas, query strings, forms, schemas loaded at run time"
+description = "axum extractors for LIVR 2.0 validation with livr, the LIVR 2.5 draft rules too: all errors at once as JSON, typed schemas, query strings, forms, schemas loaded at run time"
 keywords = ["axum", "validation", "livr", "extractor", "validator"]
 categories = ["web-programming::http-server"]
 readme = "README.md"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT"
@@ -24,7 +24,7 @@ axum = { version = "0.8", default-features = false }
 form_urlencoded = "1"
 http-body-util = "0.1"
 # rust-livr checked out next to this repository; `cargo publish` uses the version
-livr = { path = "../rust-livr/livr", version = "0.1.0" }
+livr = { path = "../rust-livr/livr", version = "0.2.0" }
 # Map::retain, as livr
 serde_json = "1.0.70"
 

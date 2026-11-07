@@ -241,7 +241,7 @@ checksum = "65cd87c9a6d60536580b316ad985726104730a5151c99845f2490428ef91240a"
 
 [[package]]
 name = "livr"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "livr-core",
  "livr-macros",
@@ -251,7 +251,7 @@ dependencies = [
 
 [[package]]
 name = "livr-axum"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "axum",
  "form_urlencoded",
@@ -266,17 +266,16 @@ dependencies = [
 
 [[package]]
 name = "livr-core"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "regex",
- "ryu-js",
  "serde",
  "serde_json",
 ]
 
 [[package]]
 name = "livr-macros"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "livr-core",
  "proc-macro2",
@@ -391,12 +390,6 @@ name = "ryu"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9774ba4a74de5f7b1c1451ed6cd5285a32eddb5cccb8cc655a4e50009e06477f"
-
-[[package]]
-name = "ryu-js"
-version = "1.0.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "04d056b875a9d2e6cb9a61d127afee9ac5999b9f87bcb32079d1318e505be714"
 
 [[package]]
 name = "serde"
